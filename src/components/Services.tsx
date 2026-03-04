@@ -4,42 +4,42 @@ const services = [
   {
     num: "01",
     title: "Web Design",
-    desc: "Custom designs that stand out from the crowd. Every pixel is purposeful, every interaction is intentional.",
+    desc: "Bespoke designs crafted with intention. Every element serves a purpose, every interaction feels considered.",
   },
   {
     num: "02",
     title: "Development",
-    desc: "Lightning-fast, responsive websites built with modern tech. Performance isn't optional—it's standard.",
+    desc: "Lightning-fast, responsive builds using modern frameworks. Performance and quality are non-negotiable.",
   },
   {
     num: "03",
     title: "E-Commerce",
-    desc: "Online stores that convert browsers into buyers. Seamless checkout, beautiful product displays.",
+    desc: "Online stores engineered to convert. From seamless checkout flows to beautiful product experiences.",
   },
   {
     num: "04",
-    title: "SEO & Strategy",
-    desc: "Get found. Get traffic. Get results. Data-driven strategies that put you on the map.",
+    title: "Brand Strategy",
+    desc: "Positioning that resonates. We help define your digital identity and craft a narrative that sticks.",
   },
 ];
 
 const Services = () => (
-  <section id="services" className="py-32 px-6 md:px-12">
+  <section id="services" className="py-32 md:py-40 px-6 md:px-16">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-20"
+        transition={{ duration: 0.7 }}
+        className="mb-24 max-w-xl"
       >
-        <span className="text-primary text-xs font-body tracking-widest uppercase">What I Do</span>
-        <h2 className="text-4xl md:text-6xl font-heading font-bold mt-3 tracking-tight">
-          Services
+        <p className="text-[13px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-4">Services</p>
+        <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-tight leading-tight">
+          What we bring to the table
         </h2>
       </motion.div>
 
-      <div className="space-y-0">
+      <div>
         {services.map((s, i) => (
           <motion.div
             key={s.num}
@@ -47,16 +47,16 @@ const Services = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-12 py-10 border-b border-border hover:border-primary/40 transition-colors duration-500 cursor-default"
+            className="group grid grid-cols-1 md:grid-cols-[60px_1fr_1fr_40px] gap-4 md:gap-8 items-baseline py-10 border-b border-border/60 hover:border-accent/30 transition-all duration-700"
           >
-            <span className="text-primary font-heading text-sm">{s.num}</span>
-            <h3 className="text-2xl md:text-4xl font-heading font-semibold group-hover:text-primary transition-colors duration-300 md:w-72">
+            <span className="text-accent/60 font-body text-[13px] tracking-wider">{s.num}</span>
+            <h3 className="text-xl md:text-2xl font-heading font-medium group-hover:text-accent transition-colors duration-500">
               {s.title}
             </h3>
-            <p className="text-muted-foreground font-body leading-relaxed flex-1">
+            <p className="text-muted-foreground font-body text-sm leading-relaxed font-light">
               {s.desc}
             </p>
-            <span className="text-muted-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300 text-xl hidden md:block">
+            <span className="text-muted-foreground/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-500 hidden md:block">
               →
             </span>
           </motion.div>

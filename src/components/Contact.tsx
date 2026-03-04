@@ -1,25 +1,26 @@
 import { motion } from "framer-motion";
 
 const Contact = () => (
-  <section id="contact" className="py-32 px-6 md:px-12 bg-secondary/20">
-    <div className="container mx-auto max-w-4xl text-center">
+  <section id="contact" className="py-32 md:py-40 px-6 md:px-16 border-t border-border/50">
+    <div className="container mx-auto max-w-3xl text-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7 }}
       >
-        <span className="text-primary text-xs font-body tracking-widest uppercase">Get In Touch</span>
-        <h2 className="text-4xl md:text-7xl font-heading font-bold mt-3 tracking-tight mb-6">
-          Let's build something<br />
-          <span className="text-gradient">incredible</span>
+        <p className="text-[13px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-6">Get in Touch</p>
+        <h2 className="text-4xl md:text-6xl font-heading font-medium tracking-tight mb-8 leading-tight">
+          Let's build something
+          <br />
+          <em className="text-gradient not-italic">remarkable</em>
         </h2>
-        <p className="text-muted-foreground font-body text-lg max-w-xl mx-auto mb-12 leading-relaxed">
-          Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your vision to life.
+        <p className="text-muted-foreground font-body text-base max-w-md mx-auto mb-14 leading-relaxed font-light">
+          Ready to elevate your digital presence? Let's start a conversation about your next project.
         </p>
         <a
           href="mailto:hello@gabeangus.com"
-          className="inline-block px-10 py-5 bg-primary text-primary-foreground font-heading font-semibold rounded-full text-sm tracking-wide hover:scale-105 transition-all duration-300 glow"
+          className="inline-block px-10 py-4 bg-foreground text-background font-body text-[13px] tracking-[0.15em] uppercase hover:bg-accent transition-all duration-500"
         >
           hello@gabeangus.com
         </a>

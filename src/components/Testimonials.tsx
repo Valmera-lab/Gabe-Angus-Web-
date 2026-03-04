@@ -19,22 +19,22 @@ const testimonials = [
 ];
 
 const Testimonials = () => (
-  <section id="about" className="py-32 px-6 md:px-12">
+  <section id="about" className="py-32 md:py-40 px-6 md:px-16">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-20"
+        transition={{ duration: 0.7 }}
+        className="mb-24 max-w-xl"
       >
-        <span className="text-primary text-xs font-body tracking-widest uppercase">Testimonials</span>
-        <h2 className="text-4xl md:text-6xl font-heading font-bold mt-3 tracking-tight">
-          Kind Words
+        <p className="text-[13px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-4">Testimonials</p>
+        <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-tight leading-tight">
+          Client words
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/30">
         {testimonials.map((t, i) => (
           <motion.div
             key={t.name}
@@ -42,13 +42,14 @@ const Testimonials = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
-            className="p-8 rounded-2xl bg-card border border-border hover:border-primary/20 transition-colors duration-500"
+            className="p-8 md:p-10 bg-background"
           >
-            <div className="text-primary text-3xl mb-6 font-heading">"</div>
-            <p className="text-foreground/80 font-body leading-relaxed mb-8">{t.quote}</p>
+            <p className="text-foreground/70 font-body text-sm leading-[1.8] font-light mb-10 italic">
+              "{t.quote}"
+            </p>
             <div>
-              <p className="font-heading font-semibold text-sm">{t.name}</p>
-              <p className="text-muted-foreground text-xs font-body">{t.role}</p>
+              <p className="font-body font-medium text-sm tracking-wide">{t.name}</p>
+              <p className="text-muted-foreground text-[12px] font-body tracking-wider mt-1">{t.role}</p>
             </div>
           </motion.div>
         ))}
