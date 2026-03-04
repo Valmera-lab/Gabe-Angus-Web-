@@ -1,20 +1,20 @@
 const items = [
+  "Strategy",
   "Web Design",
   "Development",
   "Branding",
   "UI/UX",
   "E-Commerce",
   "SEO",
-  "Strategy",
   "Performance",
 ];
 
 const Marquee = () => (
-  <div className="overflow-hidden border-y border-border py-5 bg-secondary/30">
+  <div className="overflow-hidden border-y border-border/50 py-6">
     <div className="animate-marquee whitespace-nowrap flex">
       {[...items, ...items].map((item, i) => (
-        <span key={i} className="mx-8 text-sm font-heading uppercase tracking-[0.3em] text-muted-foreground">
-          {item} <span className="text-primary ml-8">✦</span>
+        <span key={i} className="mx-10 text-[12px] font-body uppercase tracking-[0.4em] text-muted-foreground/60">
+          {item} <span className="ml-10 text-accent/40">—</span>
         </span>
       ))}
     </div>
