@@ -4,9 +4,11 @@ import Marquee from "@/components/Marquee";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
 import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
+import QuoteCalculator from "@/components/QuoteCalculator";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import LiveChat from "@/components/LiveChat";
 
 const Index = () => {
   return (
@@ -17,9 +19,11 @@ const Index = () => {
       <Services />
       <Work />
       <Stats />
-      <Testimonials />
+      <Pricing />
+      <QuoteCalculator />
       <Contact />
       <Footer />
+      <LiveChat />
     </div>
   );
 };
