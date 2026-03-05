@@ -1,39 +1,33 @@
 import { motion } from "framer-motion";
-import { Wrench, Zap, ShoppingCart, Globe, Paintbrush, Search } from "lucide-react";
+import { Wrench, ShoppingCart, Globe, Paintbrush, Search } from "lucide-react";
 
 const services = [
   {
     num: "01",
     icon: Wrench,
-    title: "Plumber Websites",
-    desc: "Professional websites for plumbing businesses that generate leads 24/7. Online booking, service pages, and local SEO built in.",
+    title: "Trades Websites",
+    desc: "Websites for plumbers, electricians, builders, and tradespeople. Online booking, service pages, and local SEO to generate leads 24/7.",
   },
   {
     num: "02",
-    icon: Zap,
-    title: "Electrician Websites",
-    desc: "Modern sites for electrical contractors. Showcase your services, certifications, and make it easy for customers to get in touch.",
+    icon: ShoppingCart,
+    title: "E-Commerce Stores",
+    desc: "Beautiful online stores that convert. From product pages to secure checkout flows, we build shops that sell.",
   },
   {
     num: "03",
-    icon: ShoppingCart,
-    title: "E-Commerce Stores",
-    desc: "Beautiful online stores that convert. From product pages to checkout flows, we build shops that sell.",
-  },
-  {
-    num: "04",
     icon: Globe,
     title: "Business Websites",
     desc: "Any business, any industry. Clean, fast, mobile-friendly websites tailored to your brand and your customers.",
   },
   {
-    num: "05",
+    num: "04",
     icon: Paintbrush,
-    title: "Redesigns & Refreshes",
-    desc: "Already have a site? We'll rebuild it from scratch — faster, prettier, and optimised for results.",
+    title: "Portfolios",
+    desc: "Stunning portfolio sites for creatives, freelancers, and professionals. Showcase your work beautifully and win more clients.",
   },
   {
-    num: "06",
+    num: "05",
     icon: Search,
     title: "SEO & Maintenance",
     desc: "Ongoing hosting, updates, and SEO included for £20/month. Your site stays fast, secure, and ranking.",

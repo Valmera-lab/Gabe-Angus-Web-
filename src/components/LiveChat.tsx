@@ -26,14 +26,14 @@ const botResponses: { keywords: string[]; response: string }[] = [
       "You can purchase full ownership of your website for £250. This includes source code, design assets, and domain transfer. After that, no more monthly fees!",
   },
   {
-    keywords: ["plumb", "plumber", "plumbing"],
+    keywords: ["plumb", "plumber", "plumbing", "electric", "electrician", "electrical", "trade", "trades", "builder"],
     response:
-      "We build professional websites for plumbers that generate leads around the clock — with online booking, service pages, and local SEO. Get a free quote on the site!",
+      "We build professional websites for tradespeople — plumbers, electricians, builders and more. Online booking, service pages, and local SEO included. Get a free quote on the site!",
   },
   {
-    keywords: ["electric", "electrician", "electrical"],
+    keywords: ["portfolio", "creative", "freelance"],
     response:
-      "We design modern websites for electricians — showcasing services, certifications, and making it easy for customers to get in touch. Check out our quote calculator!",
+      "We design stunning portfolio websites for creatives and freelancers — showcase your work beautifully and win more clients. Check out our quote calculator!",
   },
   {
     keywords: ["ecommerce", "shop", "store", "sell", "products"],

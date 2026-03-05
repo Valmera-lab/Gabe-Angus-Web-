@@ -11,10 +11,10 @@ const steps: Step[] = [
   {
     question: "What type of website do you need?",
     options: [
-      { label: "Business / Service Website", price: 300 },
+      { label: "Trades Website", price: 300 },
       { label: "E-Commerce Store", price: 500 },
-      { label: "Portfolio / Personal", price: 200 },
-      { label: "Landing Page", price: 150 },
+      { label: "Business Website", price: 300 },
+      { label: "Portfolio", price: 200 },
     ],
   },
   {

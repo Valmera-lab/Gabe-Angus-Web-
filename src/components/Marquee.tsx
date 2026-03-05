@@ -1,9 +1,8 @@
 const items = [
-  "Plumber Websites",
-  "Electrician Websites",
-  "E-Commerce",
-  "Business Sites",
-  "Redesigns",
+  "Trades Websites",
+  "E-Commerce Stores",
+  "Business Websites",
+  "Portfolios",
   "SEO",
   "£20/mo Hosting",
   "Fast Delivery",
