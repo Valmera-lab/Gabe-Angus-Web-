@@ -1,25 +1,42 @@
 import { motion } from "framer-motion";
+import { Wrench, Zap, ShoppingCart, Globe, Paintbrush, Search } from "lucide-react";
 
 const services = [
   {
     num: "01",
-    title: "Web Design",
-    desc: "Bespoke designs crafted with intention. Every element serves a purpose, every interaction feels considered.",
+    icon: Wrench,
+    title: "Plumber Websites",
+    desc: "Professional websites for plumbing businesses that generate leads 24/7. Online booking, service pages, and local SEO built in.",
   },
   {
     num: "02",
-    title: "Development",
-    desc: "Lightning-fast, responsive builds using modern frameworks. Performance and quality are non-negotiable.",
+    icon: Zap,
+    title: "Electrician Websites",
+    desc: "Modern sites for electrical contractors. Showcase your services, certifications, and make it easy for customers to get in touch.",
   },
   {
     num: "03",
-    title: "E-Commerce",
-    desc: "Online stores engineered to convert. From seamless checkout flows to beautiful product experiences.",
+    icon: ShoppingCart,
+    title: "E-Commerce Stores",
+    desc: "Beautiful online stores that convert. From product pages to checkout flows, we build shops that sell.",
   },
   {
     num: "04",
-    title: "Brand Strategy",
-    desc: "Positioning that resonates. We help define your digital identity and craft a narrative that sticks.",
+    icon: Globe,
+    title: "Business Websites",
+    desc: "Any business, any industry. Clean, fast, mobile-friendly websites tailored to your brand and your customers.",
+  },
+  {
+    num: "05",
+    icon: Paintbrush,
+    title: "Redesigns & Refreshes",
+    desc: "Already have a site? We'll rebuild it from scratch — faster, prettier, and optimised for results.",
+  },
+  {
+    num: "06",
+    icon: Search,
+    title: "SEO & Maintenance",
+    desc: "Ongoing hosting, updates, and SEO included for £20/month. Your site stays fast, secure, and ranking.",
   },
 ];
 
@@ -33,34 +50,40 @@ const Services = () => (
         transition={{ duration: 0.7 }}
         className="mb-24 max-w-xl"
       >
-        <p className="text-[13px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-4">Services</p>
+        <p className="text-[13px] text-accent tracking-[0.3em] uppercase font-body mb-4">What We Do</p>
         <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-tight leading-tight">
-          What we bring to the table
+          Websites built for
+          <br />
+          <em className="text-gradient not-italic">your industry</em>
         </h2>
       </motion.div>
 
       <div>
-        {services.map((s, i) => (
-          <motion.div
-            key={s.num}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group grid grid-cols-1 md:grid-cols-[60px_1fr_1fr_40px] gap-4 md:gap-8 items-baseline py-10 border-b border-border/60 hover:border-accent/30 transition-all duration-700"
-          >
-            <span className="text-accent/60 font-body text-[13px] tracking-wider">{s.num}</span>
-            <h3 className="text-xl md:text-2xl font-heading font-medium group-hover:text-accent transition-colors duration-500">
-              {s.title}
-            </h3>
-            <p className="text-muted-foreground font-body text-sm leading-relaxed font-light">
-              {s.desc}
-            </p>
-            <span className="text-muted-foreground/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-500 hidden md:block">
-              →
-            </span>
-          </motion.div>
-        ))}
+        {services.map((s, i) => {
+          const Icon = s.icon;
+          return (
+            <motion.div
+              key={s.num}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="group grid grid-cols-1 md:grid-cols-[60px_40px_1fr_1fr_40px] gap-4 md:gap-8 items-center py-10 border-b border-border/60 hover:border-accent/30 transition-all duration-700"
+            >
+              <span className="text-accent/60 font-body text-[13px] tracking-wider">{s.num}</span>
+              <Icon className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors duration-500 hidden md:block" />
+              <h3 className="text-xl md:text-2xl font-heading font-medium group-hover:text-accent transition-colors duration-500">
+                {s.title}
+              </h3>
+              <p className="text-muted-foreground font-body text-sm leading-relaxed font-light">
+                {s.desc}
+              </p>
+              <span className="text-muted-foreground/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-500 hidden md:block">
+                →
+              </span>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   </section>

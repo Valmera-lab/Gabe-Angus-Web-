@@ -1,12 +1,12 @@
 const items = [
-  "Strategy",
-  "Web Design",
-  "Development",
-  "Branding",
-  "UI/UX",
+  "Plumber Websites",
+  "Electrician Websites",
   "E-Commerce",
+  "Business Sites",
+  "Redesigns",
   "SEO",
-  "Performance",
+  "£20/mo Hosting",
+  "Fast Delivery",
 ];
 
 const Marquee = () => (

@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = ["Work", "Services", "About", "Contact"];
+const navLinks = [
+  { label: "Services", href: "#services" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,18 +25,18 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-10">
         {navLinks.map((link) => (
           <a
-            key={link}
-            href={`#${link.toLowerCase()}`}
+            key={link.label}
+            href={link.href}
             className="text-[13px] text-muted-foreground hover:text-foreground transition-colors duration-500 font-body tracking-[0.15em] uppercase"
           >
-            {link}
+            {link.label}
           </a>
         ))}
         <a
-          href="#contact"
-          className="ml-4 px-6 py-2.5 border border-foreground/20 text-foreground font-body text-[13px] tracking-[0.1em] uppercase hover:bg-foreground hover:text-background transition-all duration-500"
+          href="#quote"
+          className="ml-4 px-6 py-2.5 bg-accent text-accent-foreground font-body text-[13px] tracking-[0.1em] uppercase hover:bg-accent/80 transition-all duration-500"
         >
-          Get in Touch
+          Get a Quote
         </a>
       </div>
 
@@ -55,17 +60,27 @@ const Navbar = () => {
           >
             {navLinks.map((link, i) => (
               <motion.a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.label}
+                href={link.href}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => setOpen(false)}
                 className="text-3xl font-heading text-foreground hover:text-accent transition-colors"
               >
-                {link}
+                {link.label}
               </motion.a>
             ))}
+            <motion.a
+              href="#quote"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              onClick={() => setOpen(false)}
+              className="text-2xl font-heading text-accent"
+            >
+              Get a Quote
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>

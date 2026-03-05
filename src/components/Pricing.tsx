@@ -1,0 +1,100 @@
+import { motion } from "framer-motion";
+import { Check, Info } from "lucide-react";
+
+const Pricing = () => (
+  <section id="pricing" className="py-32 md:py-40 px-6 md:px-16 border-t border-border/50">
+    <div className="container mx-auto max-w-6xl">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="mb-20 max-w-xl"
+      >
+        <p className="text-[13px] text-accent tracking-[0.3em] uppercase font-body mb-4">Pricing</p>
+        <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-tight leading-tight">
+          Simple, honest pricing
+        </h2>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+        {/* Monthly Hosting */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="p-10 border border-accent/30 bg-card relative"
+        >
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
+          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-6">Hosting & Maintenance</p>
+          <div className="flex items-baseline gap-2 mb-2">
+            <span className="text-5xl md:text-6xl font-heading font-medium">£20</span>
+            <span className="text-muted-foreground font-body text-sm">/month</span>
+          </div>
+          <p className="text-muted-foreground font-body text-sm mb-8 font-light">
+            Ongoing hosting, maintenance, updates, and support — included with every website.
+          </p>
+          <div className="space-y-4">
+            {[
+              "Fast, secure hosting",
+              "Monthly updates & backups",
+              "Speed optimisation",
+              "SSL certificate included",
+              "SEO monitoring",
+              "Priority email support",
+              "Uptime monitoring 24/7",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-accent shrink-0" />
+                <span className="text-foreground/80 font-body text-sm font-light">{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Buyout Option */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="p-10 border border-border/50 bg-card"
+        >
+          <p className="text-[11px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-6">Full Ownership</p>
+          <div className="flex items-baseline gap-2 mb-2">
+            <span className="text-5xl md:text-6xl font-heading font-medium">£250</span>
+            <span className="text-muted-foreground font-body text-sm">one-time</span>
+          </div>
+          <p className="text-muted-foreground font-body text-sm mb-8 font-light">
+            Want to own your website outright and manage it yourself? Purchase the full site.
+          </p>
+          <div className="space-y-4">
+            {[
+              "Full source code handover",
+              "All design assets included",
+              "Domain transfer assistance",
+              "No more monthly fees",
+              "30-day transition support",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-muted-foreground shrink-0" />
+                <span className="text-foreground/80 font-body text-sm font-light">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 p-4 bg-secondary/50 border border-border/50 flex gap-3">
+            <Info className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+            <p className="text-muted-foreground font-body text-[12px] leading-relaxed">
+              The £20/month hosting fee is only removable when the full website is purchased for £250.
+              This includes complete ownership and source code transfer.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+export default Pricing;

@@ -9,20 +9,20 @@ const Contact = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <p className="text-[13px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-6">Get in Touch</p>
+        <p className="text-[13px] text-accent tracking-[0.3em] uppercase font-body mb-6">Get in Touch</p>
         <h2 className="text-4xl md:text-6xl font-heading font-medium tracking-tight mb-8 leading-tight">
-          Let's build something
+          Let's build your
           <br />
-          <em className="text-gradient not-italic">remarkable</em>
+          <em className="text-gradient not-italic">next website</em>
         </h2>
         <p className="text-muted-foreground font-body text-base max-w-md mx-auto mb-14 leading-relaxed font-light">
-          Ready to elevate your digital presence? Let's start a conversation about your next project.
+          Ready to get more customers online? Drop us an email and we'll get back to you within 24 hours.
         </p>
         <a
-          href="mailto:hello@gabeangus.com"
-          className="inline-block px-10 py-4 bg-foreground text-background font-body text-[13px] tracking-[0.15em] uppercase hover:bg-accent transition-all duration-500"
+          href="mailto:gabe.angus.web@gmail.com"
+          className="inline-block px-10 py-4 bg-accent text-accent-foreground font-body text-[13px] tracking-[0.15em] uppercase hover:bg-accent/80 transition-all duration-500"
         >
-          hello@gabeangus.com
+          gabe.angus.web@gmail.com
         </a>
       </motion.div>
     </div>
