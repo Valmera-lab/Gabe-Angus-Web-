@@ -37,7 +37,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-base md:text-lg text-muted-foreground max-w-xl mb-14 font-body leading-relaxed font-light"
           >
-            From plumbers to electricians to ecommerce brands — we design and develop stunning websites
+            From trades to ecommerce to business portfolios — we design and develop stunning websites
             that bring in customers and look incredible. All maintained for just{" "}
             <span className="text-accent font-medium">£20/month</span>.
           </motion.p>
