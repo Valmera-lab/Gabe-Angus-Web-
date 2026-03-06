@@ -29,12 +29,16 @@ const Pricing = () => (
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
           <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-6">Hosting & Maintenance</p>
           <div className="flex items-baseline gap-2 mb-2">
-            <span className="text-5xl md:text-6xl font-heading font-medium">£20</span>
-            <span className="text-muted-foreground font-body text-sm">/month</span>
+            <span className="text-5xl md:text-6xl font-heading font-medium">£250</span>
+            <span className="text-muted-foreground font-body text-sm">one-time build</span>
           </div>
-          <p className="text-muted-foreground font-body text-sm mb-8 font-light">
-            Ongoing hosting, maintenance, updates, and support — included with every website.
+          <p className="text-muted-foreground font-body text-sm mb-2 font-light">
+            Professional website design & development, then just £20/month for hosting & maintenance.
           </p>
+          <div className="flex items-baseline gap-2 mb-8">
+            <span className="text-2xl font-heading font-medium text-accent">+ £20</span>
+            <span className="text-muted-foreground font-body text-sm">/month ongoing</span>
+          </div>
           <div className="space-y-4">
             {[
               "Fast, secure hosting",
@@ -64,10 +68,10 @@ const Pricing = () => (
           <p className="text-[11px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-6">Full Ownership</p>
           <div className="flex items-baseline gap-2 mb-2">
             <span className="text-5xl md:text-6xl font-heading font-medium">£250</span>
-            <span className="text-muted-foreground font-body text-sm">one-time</span>
+            <span className="text-muted-foreground font-body text-sm">one-time buyout</span>
           </div>
           <p className="text-muted-foreground font-body text-sm mb-8 font-light">
-            Want to own your website outright and manage it yourself? Purchase the full site.
+            Want to own your website outright and manage it yourself? Purchase the full site to remove monthly fees.
           </p>
           <div className="space-y-4">
             {[
