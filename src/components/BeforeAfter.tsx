@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import valmeraBefore from "@/assets/valmera-before.png";
+import valmeraAfter from "@/assets/valmera-after.png";
 
 const BeforeAfter = () => {
   const [sliderPos, setSliderPos] = useState(50);
@@ -32,120 +34,32 @@ const BeforeAfter = () => {
         >
           {/* Slider */}
           <div className="relative aspect-[4/3] overflow-hidden border border-border/50 bg-card select-none">
-            {/* Before — ugly old website mockup */}
-            <div className="absolute inset-0 bg-[#f0f0f0] overflow-hidden">
-              <div className="w-full">
-                {/* Ugly nav */}
-                <div className="bg-[#003399] px-3 py-2 flex items-center gap-2">
-                  <div className="text-[#ffff00] font-bold text-[11px] md:text-[13px]" style={{ fontFamily: 'Comic Sans MS, cursive' }}>
-                    ★ VALMERA ACCESSORIES ★
-                  </div>
-                  <div className="ml-auto flex gap-2">
-                    <span className="text-[#00ff00] text-[8px] md:text-[10px] underline" style={{ fontFamily: 'Times New Roman, serif' }}>HOME</span>
-                    <span className="text-[#00ff00] text-[8px] md:text-[10px] underline" style={{ fontFamily: 'Times New Roman, serif' }}>SHOP</span>
-                    <span className="text-[#00ff00] text-[8px] md:text-[10px] underline" style={{ fontFamily: 'Times New Roman, serif' }}>ABOUT</span>
-                  </div>
-                </div>
-                {/* Ugly banner */}
-                <div className="bg-[#ff0000] text-[#ffff00] text-center py-1 text-[8px] md:text-[10px] font-bold animate-pulse" style={{ fontFamily: 'Comic Sans MS, cursive' }}>
-                  🔥🔥 SALE NOW ON!!! CLICK HERE!!! 🔥🔥
-                </div>
-                {/* Ugly content */}
-                <div className="p-3 space-y-2">
-                  <div className="bg-[#cccccc] border-2 border-[#999] p-2">
-                    <p className="text-[#000080] text-[9px] md:text-[11px] font-bold" style={{ fontFamily: 'Times New Roman, serif' }}>Welcome to our website!!!</p>
-                    <p className="text-[#333] text-[7px] md:text-[9px]" style={{ fontFamily: 'Arial, sans-serif' }}>We sell the best accessories. Please browse our site and buy stuff. Thanks for visiting!!!</p>
-                  </div>
-                  <div className="grid grid-cols-3 gap-1">
-                    <div className="bg-[#ddd] border border-[#999] p-1 text-center">
-                      <div className="w-full aspect-square bg-[#bbb] flex items-center justify-center text-[7px] text-[#666]">NO IMG</div>
-                      <p className="text-[6px] md:text-[8px] text-[#000080] font-bold mt-1">Product 1</p>
-                      <p className="text-[#ff0000] text-[7px] md:text-[9px] font-bold">£9.99</p>
-                    </div>
-                    <div className="bg-[#ddd] border border-[#999] p-1 text-center">
-                      <div className="w-full aspect-square bg-[#bbb] flex items-center justify-center text-[7px] text-[#666]">NO IMG</div>
-                      <p className="text-[6px] md:text-[8px] text-[#000080] font-bold mt-1">Product 2</p>
-                      <p className="text-[#ff0000] text-[7px] md:text-[9px] font-bold">£14.99</p>
-                    </div>
-                    <div className="bg-[#ddd] border border-[#999] p-1 text-center">
-                      <div className="w-full aspect-square bg-[#bbb] flex items-center justify-center text-[7px] text-[#666]">NO IMG</div>
-                      <p className="text-[6px] md:text-[8px] text-[#000080] font-bold mt-1">Product 3</p>
-                      <p className="text-[#ff0000] text-[7px] md:text-[9px] font-bold">£19.99</p>
-                    </div>
-                  </div>
-                  <div className="bg-[#ffff00] border-2 border-[#ff0000] p-1 text-center">
-                    <p className="text-[#ff0000] text-[7px] md:text-[9px] font-bold" style={{ fontFamily: 'Comic Sans MS, cursive' }}>
-                      ⚠️ Site best viewed in Internet Explorer ⚠️
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <img src="https://web.archive.org/web/2009/http://www.geocities.com/SiliconValley/Haven/1839/counter.gif" alt="" className="inline h-3 opacity-50" />
-                    <p className="text-[6px] text-[#999]">Visitor counter: 000042</p>
-                  </div>
-                </div>
+            {/* Before image */}
+            <div className="absolute inset-0">
+              <img src={valmeraBefore} alt="Before — outdated website" className="w-full h-full object-cover object-top" />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <span className="text-[11px] md:text-[13px] text-red-400 tracking-[0.2em] uppercase font-bold font-body">✗ Before</span>
               </div>
-              <p className="absolute bottom-2 left-3 text-[9px] md:text-[11px] text-[#999] tracking-[0.2em] uppercase font-bold">Before</p>
             </div>
 
-            {/* After — sleek dark modern site */}
+            {/* After image */}
             <div
-              className="absolute inset-0 bg-[#0a0a0a] overflow-hidden"
+              className="absolute inset-0"
               style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
             >
-              <div className="w-full">
-                {/* Modern nav */}
-                <div className="px-4 py-3 flex items-center justify-between border-b border-white/10">
-                  <span className="text-white text-[11px] md:text-[13px] tracking-[0.2em] uppercase font-light">Valmera</span>
-                  <div className="flex gap-4">
-                    <span className="text-white/50 text-[8px] md:text-[10px] tracking-[0.15em] uppercase">Shop</span>
-                    <span className="text-white/50 text-[8px] md:text-[10px] tracking-[0.15em] uppercase">Collections</span>
-                    <span className="text-white/50 text-[8px] md:text-[10px] tracking-[0.15em] uppercase">About</span>
-                  </div>
-                </div>
-                {/* Hero */}
-                <div className="px-4 py-6 md:py-8">
-                  <p className="text-accent text-[8px] md:text-[10px] tracking-[0.3em] uppercase mb-2">New Collection</p>
-                  <h3 className="text-white text-[16px] md:text-[22px] font-light tracking-tight leading-tight mb-2">Elevate Your<br />Everyday Style</h3>
-                  <p className="text-white/40 text-[7px] md:text-[9px] mb-3 max-w-[200px]">Premium accessories crafted for the modern individual.</p>
-                  <div className="inline-block bg-accent px-3 py-1.5">
-                    <span className="text-accent-foreground text-[8px] md:text-[10px] tracking-[0.15em] uppercase">Shop Now</span>
-                  </div>
-                </div>
-                {/* Products */}
-                <div className="px-4 grid grid-cols-3 gap-2">
-                  <div>
-                    <div className="w-full aspect-square bg-white/5 border border-white/10 flex items-center justify-center">
-                      <span className="text-white/20 text-[18px]">✦</span>
-                    </div>
-                    <p className="text-white/70 text-[7px] md:text-[9px] mt-1.5 tracking-wide">Gold Ring</p>
-                    <p className="text-accent text-[7px] md:text-[9px]">£29.99</p>
-                  </div>
-                  <div>
-                    <div className="w-full aspect-square bg-white/5 border border-white/10 flex items-center justify-center">
-                      <span className="text-white/20 text-[18px]">✦</span>
-                    </div>
-                    <p className="text-white/70 text-[7px] md:text-[9px] mt-1.5 tracking-wide">Silver Chain</p>
-                    <p className="text-accent text-[7px] md:text-[9px]">£39.99</p>
-                  </div>
-                  <div>
-                    <div className="w-full aspect-square bg-white/5 border border-white/10 flex items-center justify-center">
-                      <span className="text-white/20 text-[18px]">✦</span>
-                    </div>
-                    <p className="text-white/70 text-[7px] md:text-[9px] mt-1.5 tracking-wide">Pearl Set</p>
-                    <p className="text-accent text-[7px] md:text-[9px]">£49.99</p>
-                  </div>
-                </div>
+              <img src={valmeraAfter} alt="After — modern Valmera website" className="w-full h-full object-cover object-top" />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <span className="text-[11px] md:text-[13px] text-accent tracking-[0.2em] uppercase font-bold font-body">✓ After</span>
               </div>
-              <p className="absolute bottom-2 left-3 text-[9px] md:text-[11px] text-accent tracking-[0.2em] uppercase font-bold">After</p>
             </div>
 
             {/* Slider handle */}
             <div
-              className="absolute top-0 bottom-0 w-0.5 bg-accent z-10 cursor-col-resize"
+              className="absolute top-0 bottom-0 w-0.5 bg-white z-10 cursor-col-resize"
               style={{ left: `${sliderPos}%` }}
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-accent flex items-center justify-center shadow-lg">
-                <span className="text-accent-foreground text-[10px] font-body font-bold">⟨⟩</span>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg shadow-black/40">
+                <span className="text-background text-[12px] font-bold">⟨⟩</span>
               </div>
             </div>
 
@@ -173,7 +87,7 @@ const BeforeAfter = () => {
             </p>
             <p className="text-muted-foreground font-body text-sm leading-[1.9] font-light mb-8 max-w-md">
               A fully custom ecommerce store built for Valmera Accessories — featuring product catalogues,
-              secure checkout, and a premium dark design that reflects their brand identity. The old site
+              secure checkout, and a premium design that reflects their brand identity. The old site
               was outdated, slow, and wasn't converting. We rebuilt everything from scratch.
             </p>
 
