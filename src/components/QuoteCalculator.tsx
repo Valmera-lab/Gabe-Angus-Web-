@@ -13,25 +13,14 @@ const steps: Step[] = [
     options: [
       { label: "Trades Website", price: 300 },
       { label: "E-Commerce Store", price: 500 },
-      { label: "Business Website", price: 300 },
+      { label: "Business Website", price: 350 },
       { label: "Portfolio", price: 200 },
     ],
   },
   {
-    question: "How many pages do you need?",
+    question: "Do you need SEO optimisation?",
     options: [
-      { label: "1–3 pages", price: 0 },
-      { label: "4–7 pages", price: 100 },
-      { label: "8–15 pages", price: 250 },
-      { label: "15+ pages", price: 400 },
-    ],
-  },
-  {
-    question: "Do you need any extras?",
-    options: [
-      { label: "Contact form & booking", price: 50 },
-      { label: "SEO optimisation", price: 75 },
-      { label: "Logo & branding", price: 120 },
+      { label: "Yes, SEO optimisation", price: 75 },
       { label: "No extras needed", price: 0 },
     ],
   },
@@ -39,8 +28,8 @@ const steps: Step[] = [
     question: "How fast do you need it?",
     options: [
       { label: "No rush (2–4 weeks)", price: 0 },
-      { label: "Standard (1–2 weeks)", price: 50 },
-      { label: "Rush (under 1 week)", price: 150 },
+      { label: "Standard (1–2 weeks)", price: 0 },
+      { label: "Rush (3–5 days)", price: 50 },
     ],
   },
 ];

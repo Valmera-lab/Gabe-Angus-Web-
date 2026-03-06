@@ -13,7 +13,7 @@ const botResponses: { keywords: string[]; response: string }[] = [
   {
     keywords: ["price", "cost", "how much", "pricing", "quote", "budget", "expensive"],
     response:
-      "Our websites start from around £150 for a landing page. All sites include hosting & maintenance at £20/month. You can also use our quote calculator on the site for an instant estimate! If you'd prefer full ownership, the entire site can be purchased for an extra £250.",
+      "Our websites start from £200 for portfolios, £300 for trades, £350 for business, and £500 for e-commerce. All sites are £250 upfront then £20/month for hosting & maintenance. The monthly fee is only removable if you purchase full ownership for an extra £250. Use our quote calculator for an instant estimate!",
   },
   {
     keywords: ["hosting", "maintenance", "monthly", "20", "£20"],
