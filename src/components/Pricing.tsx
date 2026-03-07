@@ -71,15 +71,17 @@ const Pricing = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="p-10 border border-border/50 bg-card"
+          className="p-10 border border-accent/20 bg-card relative"
         >
-          <p className="text-[11px] text-muted-foreground tracking-[0.3em] uppercase font-body mb-6">Add-on</p>
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-2">Recommended Add-on</p>
+          <p className="text-accent font-body text-[11px] tracking-wide mb-6">Most clients add this</p>
           <div className="flex items-baseline gap-2 mb-2">
-            <span className="text-5xl md:text-6xl font-heading font-medium">£50</span>
-            <span className="text-muted-foreground font-body text-sm">/month</span>
+            <span className="text-5xl md:text-6xl font-heading font-medium">+£100</span>
+            <span className="text-muted-foreground font-body text-sm">/month on top of £199</span>
           </div>
           <p className="text-muted-foreground font-body text-sm mb-8 font-light">
-            Want to dominate search results? Add full SEO optimisation to your monthly plan for maximum visibility.
+            Dominate Google and get found by customers actively searching for your services. The difference between being on page 1 and being invisible.
           </p>
           <div className="space-y-4">
             {[
@@ -99,7 +101,7 @@ const Pricing = () => (
           <div className="mt-8 p-4 bg-secondary/50 border border-border/50 flex gap-3">
             <Info className="w-4 h-4 text-accent shrink-0 mt-0.5" />
             <p className="text-muted-foreground font-body text-[12px] leading-relaxed">
-              Basic SEO is already included in your £199/month plan. This add-on is for businesses wanting advanced, full-service SEO.
+              Basic SEO is already included in your £199/month. This upgrades you to £299/month total with full-service SEO that gets real results.
             </p>
           </div>
         </motion.div>
