@@ -20,7 +20,7 @@ const steps: Step[] = [
   {
     question: "Do you need full SEO optimisation?",
     options: [
-      { label: "Yes, full SEO optimisation", price: 50 },
+      { label: "Yes, full SEO optimisation (+£100/mo)", price: 0 },
       { label: "No, basic SEO is fine", price: 0 },
     ],
   },
@@ -58,7 +58,7 @@ const QuoteCalculator = () => {
 
   // Calculate monthly cost
   const hasSeo = selections[1] === 0;
-  const monthlyCost = 199 + (hasSeo ? 50 : 0);
+  const monthlyCost = 199 + (hasSeo ? 100 : 0);
 
   const allSelected = selections.every((s) => s !== null);
 
