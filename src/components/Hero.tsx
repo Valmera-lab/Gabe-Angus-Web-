@@ -38,8 +38,8 @@ const Hero = () => {
             className="text-base md:text-lg text-muted-foreground max-w-xl mb-14 font-body leading-relaxed font-light"
           >
             From trades to ecommerce to business portfolios — we design and develop stunning websites
-            that bring in customers and look incredible. All maintained for just{" "}
-            <span className="text-accent font-medium">£20/month</span>.
+            that bring in customers and look incredible. Starting from just{" "}
+            <span className="text-accent font-medium">£500</span>.
           </motion.p>
 
           <motion.div
