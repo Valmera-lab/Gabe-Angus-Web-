@@ -11,17 +11,17 @@ const steps: Step[] = [
   {
     question: "What type of website do you need?",
     options: [
-      { label: "Trades Website", price: 300 },
+      { label: "Trades Website", price: 500 },
       { label: "E-Commerce Store", price: 500 },
-      { label: "Business Website", price: 350 },
-      { label: "Portfolio", price: 200 },
+      { label: "Business Website", price: 500 },
+      { label: "Portfolio", price: 500 },
     ],
   },
   {
-    question: "Do you need SEO optimisation?",
+    question: "Do you need full SEO optimisation?",
     options: [
-      { label: "Yes, SEO optimisation", price: 75 },
-      { label: "No extras needed", price: 0 },
+      { label: "Yes, full SEO optimisation", price: 50 },
+      { label: "No, basic SEO is fine", price: 0 },
     ],
   },
   {
@@ -56,6 +56,10 @@ const QuoteCalculator = () => {
     return sum;
   }, 0);
 
+  // Calculate monthly cost
+  const hasSeo = selections[1] === 0;
+  const monthlyCost = 199 + (hasSeo ? 50 : 0);
+
   const allSelected = selections.every((s) => s !== null);
 
   const handleSubmit = () => {
@@ -64,10 +68,10 @@ const QuoteCalculator = () => {
       .filter(Boolean)
       .join("\n");
 
-    const mailBody = `Hi Gabe,%0D%0A%0D%0AI'd like a quote for a website.%0D%0A%0D%0AName: ${name}%0D%0AEstimated Budget: £${totalEstimate}%0D%0A%0D%0ABreakdown:%0D%0A${breakdown.replace(/\n/g, "%0D%0A")}%0D%0A%0D%0APlus £20/month hosting & maintenance.%0D%0A%0D%0AThanks!`;
+    const mailBody = `Hi Gabe,%0D%0A%0D%0AI'd like a quote for a website.%0D%0A%0D%0AName: ${name}%0D%0AOne-time build: £${totalEstimate}%0D%0AMonthly: £${monthlyCost}/month (12-month minimum)%0D%0A%0D%0ABreakdown:%0D%0A${breakdown.replace(/\n/g, "%0D%0A")}%0D%0A%0D%0AThanks!`;
 
     window.open(
-      `mailto:gabe.angus.web@gmail.com?subject=Website Quote Request — £${totalEstimate} estimate&body=${mailBody}`,
+      `mailto:gabe.angus.web@gmail.com?subject=Website Quote Request — £${totalEstimate} build + £${monthlyCost}/mo&body=${mailBody}`,
       "_self"
     );
     setSubmitted(true);
@@ -120,7 +124,7 @@ const QuoteCalculator = () => {
           layout
           className="mb-10 p-6 border border-accent/20 bg-accent/5 text-center"
         >
-          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-2">Estimated Total</p>
+          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-2">One-time Build</p>
           <motion.span
             key={totalEstimate}
             initial={{ scale: 0.8, opacity: 0 }}
@@ -129,7 +133,9 @@ const QuoteCalculator = () => {
           >
             £{totalEstimate}
           </motion.span>
-          <p className="text-muted-foreground font-body text-[12px] mt-2">+ £20/month hosting & maintenance</p>
+          <p className="text-muted-foreground font-body text-[12px] mt-2">
+            + £{monthlyCost}/month (12-month minimum)
+          </p>
         </motion.div>
 
         {/* Steps */}
@@ -159,7 +165,9 @@ const QuoteCalculator = () => {
                     >
                       <p className="font-body text-sm font-medium mb-1">{opt.label}</p>
                       {opt.price > 0 && (
-                        <p className="text-accent text-[12px] font-body">+£{opt.price}</p>
+                        <p className="text-accent text-[12px] font-body">
+                          {i === 0 && currentStep === 1 ? "+£50/mo" : opt.label.includes("Rush") || currentStep === 2 ? `+£${opt.price}` : `£${opt.price}`}
+                        </p>
                       )}
                     </button>
                   ))}

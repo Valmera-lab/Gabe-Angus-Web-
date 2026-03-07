@@ -139,11 +139,11 @@ const Contact = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-accent mt-0.5">02</span>
-                  <span>Schedule a free discovery call</span>
+                  <span>Deliver a tailored proposal & quote</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-accent mt-0.5">03</span>
-                  <span>Deliver a tailored proposal & quote</span>
+                  <span>Get your website live & growing</span>
                 </li>
               </ul>
             </div>
