@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-10" />
+        <img src={heroBg} alt="Modern website design background" className="w-full h-full object-cover opacity-10" loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
       </div>
 
