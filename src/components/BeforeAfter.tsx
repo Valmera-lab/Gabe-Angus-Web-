@@ -36,7 +36,7 @@ const BeforeAfter = () => {
           <div className="relative aspect-[4/3] overflow-hidden border border-border/50 bg-card select-none">
             {/* Before image */}
             <div className="absolute inset-0">
-              <img src={valmeraBefore} alt="Before — outdated website" className="w-full h-full object-cover object-top" />
+              <img src={valmeraBefore} alt="Before redesign — outdated Valmera website with poor layout" className="w-full h-full object-cover object-top" loading="lazy" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                 <span className="text-[11px] md:text-[13px] text-red-400 tracking-[0.2em] uppercase font-bold font-body">✗ Before</span>
               </div>
