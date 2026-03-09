@@ -10,20 +10,32 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) {
       toast({ title: "Please fill in all fields", variant: "destructive" });
       return;
     }
     setSending(true);
-    const subject = encodeURIComponent(`New enquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:gabe.angus.web@gmail.com?subject=${subject}&body=${body}`;
-    setTimeout(() => {
+    try {
+      const res = await fetch("https://formspree.io/f/xyknkwnv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (res.ok) {
+        toast({ title: "Message sent! We'll get back to you soon." });
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        toast({ title: "Something went wrong. Please try again.", variant: "destructive" });
+      }
+    } catch {
+      toast({ title: "Network error. Please try again.", variant: "destructive" });
+    } finally {
       setSending(false);
-      toast({ title: "Opening your email client…" });
-    }, 1000);
+    }
   };
 
   return (
