@@ -25,7 +25,7 @@ const Pricing = () => (
         transition={{ duration: 0.5 }}
         className="max-w-4xl mb-6"
       >
-        <div className="p-10 md:p-14 border border-accent/30 bg-card relative">
+        <div className="p-6 sm:p-10 md:p-14 border border-accent/30 bg-card relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
           
           <div className="grid md:grid-cols-2 gap-10 md:gap-16">
