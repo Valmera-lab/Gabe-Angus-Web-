@@ -237,10 +237,10 @@ const QuoteCalculator = () => {
                 </div>
                 <button
                   onClick={handleSubmit}
-                  disabled={!name || !email}
+                  disabled={!name || !email || sending}
                   className="w-full flex items-center justify-center gap-3 py-4 bg-accent text-accent-foreground font-body text-[13px] tracking-[0.15em] uppercase hover:bg-accent/80 disabled:opacity-30 transition-all duration-500"
                 >
-                  Send Quote Request <Send className="w-4 h-4" />
+                  {sending ? "Sending…" : "Send Quote Request"} {!sending && <Send className="w-4 h-4" />}
                 </button>
               </motion.div>
             )}
