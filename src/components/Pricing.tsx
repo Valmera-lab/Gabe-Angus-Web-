@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check, Info, Star } from "lucide-react";
 
 const Pricing = () => (
-  <section id="pricing" className="py-32 md:py-40 px-6 md:px-16 border-t border-border/50">
+  <section id="pricing" className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-16 border-t border-border/50">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
