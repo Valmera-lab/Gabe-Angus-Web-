@@ -118,7 +118,7 @@ const LiveChat = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 w-[360px] max-w-[calc(100vw-48px)] h-[480px] bg-card border border-border/50 flex flex-col shadow-2xl"
+            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[320px] sm:w-[360px] max-w-[calc(100vw-32px)] h-[420px] sm:h-[480px] bg-card border border-border/50 flex flex-col shadow-2xl"
           >
             {/* Header */}
             <div className="p-4 border-b border-border/50 flex items-center gap-3">

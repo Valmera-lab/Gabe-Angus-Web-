@@ -8,7 +8,7 @@ const stats = [
 ];
 
 const Stats = () => (
-  <section className="py-24 px-6 md:px-16 border-y border-border/50">
+  <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-16 border-y border-border/50">
     <div className="container mx-auto max-w-6xl">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
         {stats.map((s, i) => (

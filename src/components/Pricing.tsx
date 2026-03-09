@@ -85,7 +85,7 @@ const Pricing = () => (
         transition={{ duration: 0.5, delay: 0.15 }}
         className="max-w-4xl"
       >
-        <div className="p-10 md:p-14 border border-accent/20 bg-gradient-to-br from-card to-accent/[0.03] relative overflow-hidden">
+        <div className="p-6 sm:p-10 md:p-14 border border-accent/20 bg-gradient-to-br from-card to-accent/[0.03] relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
           
           {/* Popular badge */}

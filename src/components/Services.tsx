@@ -62,7 +62,7 @@ const Services = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group grid grid-cols-1 md:grid-cols-[60px_40px_1fr_1fr_40px] gap-4 md:gap-8 items-center py-10 border-b border-border/60 hover:border-accent/30 transition-all duration-700"
+              className="group grid grid-cols-1 md:grid-cols-[60px_40px_1fr_1fr_40px] gap-2 sm:gap-4 md:gap-8 items-center py-6 sm:py-10 border-b border-border/60 hover:border-accent/30 transition-all duration-700"
             >
               <span className="text-accent/60 font-body text-[13px] tracking-wider">{s.num}</span>
               <Icon className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors duration-500 hidden md:block" />

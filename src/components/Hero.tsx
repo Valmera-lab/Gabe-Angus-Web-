@@ -24,7 +24,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-5xl sm:text-6xl lg:text-8xl font-heading font-medium leading-[1.05] tracking-tight mb-10"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-medium leading-[1.05] tracking-tight mb-8 sm:mb-10"
           >
             We build websites for
             <br />
