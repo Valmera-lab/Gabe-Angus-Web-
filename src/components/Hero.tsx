@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 md:px-16 pt-32 pb-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-16 pt-24 sm:pt-32 pb-16 sm:pb-20">
         <div className="max-w-5xl">
           <motion.p
             initial={{ opacity: 0 }}
@@ -24,7 +24,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-5xl sm:text-6xl lg:text-8xl font-heading font-medium leading-[1.05] tracking-tight mb-10"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-medium leading-[1.05] tracking-tight mb-8 sm:mb-10"
           >
             We build websites for
             <br />

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check, Info, Star } from "lucide-react";
 
 const Pricing = () => (
-  <section id="pricing" className="py-32 md:py-40 px-6 md:px-16 border-t border-border/50">
+  <section id="pricing" className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-16 border-t border-border/50">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -25,7 +25,7 @@ const Pricing = () => (
         transition={{ duration: 0.5 }}
         className="max-w-4xl mb-6"
       >
-        <div className="p-10 md:p-14 border border-accent/30 bg-card relative">
+        <div className="p-6 sm:p-10 md:p-14 border border-accent/30 bg-card relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
           
           <div className="grid md:grid-cols-2 gap-10 md:gap-16">
@@ -85,7 +85,7 @@ const Pricing = () => (
         transition={{ duration: 0.5, delay: 0.15 }}
         className="max-w-4xl"
       >
-        <div className="p-10 md:p-14 border border-accent/20 bg-gradient-to-br from-card to-accent/[0.03] relative overflow-hidden">
+        <div className="p-6 sm:p-10 md:p-14 border border-accent/20 bg-gradient-to-br from-card to-accent/[0.03] relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
           
           {/* Popular badge */}

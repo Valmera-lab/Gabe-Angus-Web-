@@ -35,7 +35,7 @@ const services = [
 ];
 
 const Services = () => (
-  <section id="services" className="py-32 md:py-40 px-6 md:px-16">
+  <section id="services" className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-16">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ const Services = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group grid grid-cols-1 md:grid-cols-[60px_40px_1fr_1fr_40px] gap-4 md:gap-8 items-center py-10 border-b border-border/60 hover:border-accent/30 transition-all duration-700"
+              className="group grid grid-cols-1 md:grid-cols-[60px_40px_1fr_1fr_40px] gap-2 sm:gap-4 md:gap-8 items-center py-6 sm:py-10 border-b border-border/60 hover:border-accent/30 transition-all duration-700"
             >
               <span className="text-accent/60 font-body text-[13px] tracking-wider">{s.num}</span>
               <Icon className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors duration-500 hidden md:block" />

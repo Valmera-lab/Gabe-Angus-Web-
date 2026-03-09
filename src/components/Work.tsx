@@ -47,7 +47,7 @@ const reviews = [
 ];
 
 const Work = () => (
-  <section id="reviews" className="py-32 md:py-40 px-6 md:px-16">
+  <section id="reviews" className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-16">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
