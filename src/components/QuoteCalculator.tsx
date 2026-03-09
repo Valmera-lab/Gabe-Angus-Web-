@@ -62,19 +62,34 @@ const QuoteCalculator = () => {
 
   const allSelected = selections.every((s) => s !== null);
 
-  const handleSubmit = () => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async () => {
     const breakdown = selections
       .map((sel, i) => (sel !== null ? `${steps[i].question}: ${steps[i].options[sel].label}` : ""))
       .filter(Boolean)
       .join("\n");
 
-    const mailBody = `Hi Gabe,%0D%0A%0D%0AI'd like a quote for a website.%0D%0A%0D%0AName: ${name}%0D%0AOne-time build: £${totalEstimate}%0D%0AMonthly: £${monthlyCost}/month (12-month minimum)%0D%0A%0D%0ABreakdown:%0D%0A${breakdown.replace(/\n/g, "%0D%0A")}%0D%0A%0D%0AThanks!`;
-
-    window.open(
-      `mailto:gabe.angus.web@gmail.com?subject=Website Quote Request — £${totalEstimate} build + £${monthlyCost}/mo&body=${mailBody}`,
-      "_self"
-    );
-    setSubmitted(true);
+    setSending(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xyknkwnv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          subject: `Quote Request — £${totalEstimate} build + £${monthlyCost}/mo`,
+          message: `One-time build: £${totalEstimate}\nMonthly: £${monthlyCost}/month (12-month minimum)\n\nBreakdown:\n${breakdown}`,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      }
+    } catch {
+      // silent fail
+    } finally {
+      setSending(false);
+    }
   };
 
   const isLastStep = currentStep === steps.length - 1;
