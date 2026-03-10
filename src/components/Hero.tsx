@@ -66,7 +66,7 @@ const Hero = () => {
             className="mt-12 flex items-center justify-center gap-8 text-muted-foreground font-body text-[12px] tracking-wider"
           >
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500" />
+              <span className="w-2 h-2 rounded-full bg-accent" />
               Fast Turnaround
             </span>
             <span className="hidden sm:block w-px h-4 bg-border" />
