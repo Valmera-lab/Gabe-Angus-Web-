@@ -1,80 +1,80 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="Modern website design background" className="w-full h-full object-cover opacity-10" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
-      </div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5" />
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-16 pt-24 sm:pt-32 pb-16 sm:pb-20">
-        <div className="max-w-5xl">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="text-[13px] text-accent tracking-[0.3em] uppercase font-body mb-10"
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-16 pt-28 sm:pt-36 pb-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-block px-4 py-1.5 border border-accent/30 bg-accent/5 mb-8"
           >
-            Websites that work as hard as you do
-          </motion.p>
+            <span className="text-accent text-[12px] tracking-[0.2em] uppercase font-body font-medium">
+              Trusted by 50+ UK businesses
+            </span>
+          </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-medium leading-[1.05] tracking-tight mb-8 sm:mb-10"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-medium leading-[1.1] tracking-tight mb-6"
           >
-            We build websites for
-            <br />
-            <em className="text-gradient not-italic">businesses that grow</em>
+            Websites That Bring More Customers to{" "}
+            <span className="text-gradient">Your Business</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-base md:text-lg text-muted-foreground max-w-xl mb-14 font-body leading-relaxed font-light"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body font-light leading-relaxed"
           >
-            From trades to ecommerce to business portfolios — we design and develop stunning websites
-            that bring in customers and look incredible. Starting from just{" "}
+            We build modern, mobile-friendly websites for tradespeople and small businesses 
+            — designed to turn visitors into paying customers. Starting from{" "}
             <span className="text-accent font-medium">£500</span>.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-wrap gap-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
               href="#quote"
-              className="group px-8 py-4 bg-accent text-accent-foreground font-body text-[13px] tracking-[0.15em] uppercase hover:bg-accent/80 transition-all duration-500"
+              className="px-10 py-4 bg-accent text-accent-foreground font-body text-[13px] tracking-[0.15em] uppercase hover:bg-accent/85 transition-all duration-300 text-center"
             >
               Get a Free Quote
             </a>
             <a
-              href="#reviews"
-              className="px-8 py-4 border border-border text-foreground font-body text-[13px] tracking-[0.15em] uppercase hover:border-accent/40 transition-all duration-500"
+              href="#portfolio"
+              className="px-10 py-4 border border-border text-foreground font-body text-[13px] tracking-[0.15em] uppercase hover:border-accent/40 transition-all duration-300 text-center"
             >
-              See Reviews
+              View Our Work
             </a>
           </motion.div>
-        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        >
           <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-            className="w-px h-12 bg-gradient-to-b from-transparent via-accent/50 to-transparent"
-          />
-        </motion.div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-12 flex items-center justify-center gap-8 text-muted-foreground font-body text-[12px] tracking-wider"
+          >
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              Fast Turnaround
+            </span>
+            <span className="hidden sm:block w-px h-4 bg-border" />
+            <span>No Hidden Fees</span>
+            <span className="hidden sm:block w-px h-4 bg-border" />
+            <span>5★ Rated</span>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
