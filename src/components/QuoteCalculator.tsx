@@ -11,10 +11,17 @@ const steps: Step[] = [
   {
     question: "What type of website do you need?",
     options: [
-      { label: "Trades Website", price: 500 },
-      { label: "E-Commerce Store", price: 500 },
-      { label: "Business Website", price: 500 },
-      { label: "Portfolio", price: 500 },
+      { label: "Trades Website", price: 0 },
+      { label: "E-Commerce Store", price: 0 },
+      { label: "Business Website", price: 0 },
+      { label: "Portfolio", price: 0 },
+    ],
+  },
+  {
+    question: "Do you have a website already?",
+    options: [
+      { label: "No, this is my first website", price: 0 },
+      { label: "Yes, I want a redesign", price: 0 },
     ],
   },
   {
@@ -29,7 +36,7 @@ const steps: Step[] = [
     options: [
       { label: "No rush (2–4 weeks)", price: 0 },
       { label: "Standard (1–2 weeks)", price: 0 },
-      { label: "Rush (3–5 days)", price: 50 },
+      { label: "Rush (3–5 days) — £50 one-off", price: 50 },
     ],
   },
 ];
@@ -49,16 +56,24 @@ const QuoteCalculator = () => {
     setSelections(newSelections);
   };
 
-  const totalEstimate = selections.reduce((sum, sel, i) => {
+  const rushFee = selections.reduce((sum, sel, i) => {
     if (sel !== null) {
       return sum + steps[i].options[sel].price;
     }
     return sum;
   }, 0);
 
-  // Calculate monthly cost
-  const hasSeo = selections[1] === 0;
-  const monthlyCost = 199 + (hasSeo ? 100 : 0);
+  // Step indexes
+  const NEW_BUSINESS_STEP = 1;
+  const SEO_STEP = 2;
+
+  const isNewBusiness = selections[NEW_BUSINESS_STEP] === 0;
+  const hasSeo = selections[SEO_STEP] === 0;
+
+  const baseMonthly = 199 + (hasSeo ? 100 : 0);
+  // 10% off for 12 months if it's their first website
+  const discountedMonthly = isNewBusiness ? Math.round(baseMonthly * 0.9) : baseMonthly;
+  const firstMonth = isNewBusiness ? 20 : discountedMonthly;
 
   const allSelected = selections.every((s) => s !== null);
 
@@ -70,6 +85,10 @@ const QuoteCalculator = () => {
       .filter(Boolean)
       .join("\n");
 
+    const offerLine = isNewBusiness
+      ? `First month: £${firstMonth}\nThen: £${discountedMonthly}/month (10% off for 12 months)\nStandard rate after: £${baseMonthly}/month`
+      : `Monthly: £${baseMonthly}/month (12-month minimum)`;
+
     setSending(true);
     try {
       const res = await fetch("https://formspree.io/f/xyknkwnv", {
@@ -78,8 +97,8 @@ const QuoteCalculator = () => {
         body: JSON.stringify({
           name,
           email,
-          subject: `Quote Request — £${totalEstimate} build + £${monthlyCost}/mo`,
-          message: `One-time build: £${totalEstimate}\nMonthly: £${monthlyCost}/month (12-month minimum)\n\nBreakdown:\n${breakdown}`,
+          subject: `Quote Request — £${firstMonth} first month + £${discountedMonthly}/mo${rushFee ? ` (+£${rushFee} rush)` : ""}`,
+          message: `${offerLine}${rushFee ? `\nRush delivery fee: £${rushFee} one-off` : ""}\n\nBreakdown:\n${breakdown}`,
         }),
       });
       if (res.ok) {
@@ -139,18 +158,29 @@ const QuoteCalculator = () => {
           layout
           className="mb-10 p-6 border border-accent/20 bg-accent/5 text-center"
         >
-          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-2">One-time Build</p>
+          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-2">
+            {isNewBusiness ? "First Month" : "Monthly"}
+          </p>
           <motion.span
-            key={totalEstimate}
+            key={firstMonth}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             className="text-4xl md:text-5xl font-heading font-medium text-foreground inline-block"
           >
-            £{totalEstimate}
+            £{firstMonth}
           </motion.span>
-          <p className="text-muted-foreground font-body text-[12px] mt-2">
-            + £{monthlyCost}/month (12-month minimum)
-          </p>
+          {isNewBusiness ? (
+            <p className="text-muted-foreground font-body text-[12px] mt-2">
+              Then £{discountedMonthly}/month for 12 months · 10% off applied
+            </p>
+          ) : (
+            <p className="text-muted-foreground font-body text-[12px] mt-2">
+              £{baseMonthly}/month · 12-month minimum
+            </p>
+          )}
+          {rushFee > 0 && (
+            <p className="text-accent/80 font-body text-[11px] mt-1">+ £{rushFee} one-off rush fee</p>
+          )}
         </motion.div>
 
         {/* Steps */}
@@ -179,11 +209,6 @@ const QuoteCalculator = () => {
                       }`}
                     >
                       <p className="font-body text-sm font-medium mb-1">{opt.label}</p>
-                      {opt.price > 0 && (
-                        <p className="text-accent text-[12px] font-body">
-                          {i === 0 && currentStep === 1 ? "+£50/mo" : opt.label.includes("Rush") || currentStep === 2 ? `+£${opt.price}` : `£${opt.price}`}
-                        </p>
-                      )}
                     </button>
                   ))}
                 </div>
