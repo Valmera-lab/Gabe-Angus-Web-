@@ -56,16 +56,24 @@ const QuoteCalculator = () => {
     setSelections(newSelections);
   };
 
-  const totalEstimate = selections.reduce((sum, sel, i) => {
+  const rushFee = selections.reduce((sum, sel, i) => {
     if (sel !== null) {
       return sum + steps[i].options[sel].price;
     }
     return sum;
   }, 0);
 
-  // Calculate monthly cost
-  const hasSeo = selections[1] === 0;
-  const monthlyCost = 199 + (hasSeo ? 100 : 0);
+  // Step indexes
+  const NEW_BUSINESS_STEP = 1;
+  const SEO_STEP = 2;
+
+  const isNewBusiness = selections[NEW_BUSINESS_STEP] === 0;
+  const hasSeo = selections[SEO_STEP] === 0;
+
+  const baseMonthly = 199 + (hasSeo ? 100 : 0);
+  // 10% off for 12 months if it's their first website
+  const discountedMonthly = isNewBusiness ? Math.round(baseMonthly * 0.9) : baseMonthly;
+  const firstMonth = isNewBusiness ? 20 : discountedMonthly;
 
   const allSelected = selections.every((s) => s !== null);
 
@@ -77,6 +85,10 @@ const QuoteCalculator = () => {
       .filter(Boolean)
       .join("\n");
 
+    const offerLine = isNewBusiness
+      ? `First month: £${firstMonth}\nThen: £${discountedMonthly}/month (10% off for 12 months)\nStandard rate after: £${baseMonthly}/month`
+      : `Monthly: £${baseMonthly}/month (12-month minimum)`;
+
     setSending(true);
     try {
       const res = await fetch("https://formspree.io/f/xyknkwnv", {
@@ -85,8 +97,8 @@ const QuoteCalculator = () => {
         body: JSON.stringify({
           name,
           email,
-          subject: `Quote Request — £${totalEstimate} build + £${monthlyCost}/mo`,
-          message: `One-time build: £${totalEstimate}\nMonthly: £${monthlyCost}/month (12-month minimum)\n\nBreakdown:\n${breakdown}`,
+          subject: `Quote Request — £${firstMonth} first month + £${discountedMonthly}/mo${rushFee ? ` (+£${rushFee} rush)` : ""}`,
+          message: `${offerLine}${rushFee ? `\nRush delivery fee: £${rushFee} one-off` : ""}\n\nBreakdown:\n${breakdown}`,
         }),
       });
       if (res.ok) {
