@@ -209,11 +209,6 @@ const QuoteCalculator = () => {
                       }`}
                     >
                       <p className="font-body text-sm font-medium mb-1">{opt.label}</p>
-                      {opt.price > 0 && (
-                        <p className="text-accent text-[12px] font-body">
-                          {i === 0 && currentStep === 1 ? "+£50/mo" : opt.label.includes("Rush") || currentStep === 2 ? `+£${opt.price}` : `£${opt.price}`}
-                        </p>
-                      )}
                     </button>
                   ))}
                 </div>
