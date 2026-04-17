@@ -158,18 +158,29 @@ const QuoteCalculator = () => {
           layout
           className="mb-10 p-6 border border-accent/20 bg-accent/5 text-center"
         >
-          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-2">One-time Build</p>
+          <p className="text-[11px] text-accent tracking-[0.3em] uppercase font-body mb-2">
+            {isNewBusiness ? "First Month" : "Monthly"}
+          </p>
           <motion.span
-            key={totalEstimate}
+            key={firstMonth}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             className="text-4xl md:text-5xl font-heading font-medium text-foreground inline-block"
           >
-            £{totalEstimate}
+            £{firstMonth}
           </motion.span>
-          <p className="text-muted-foreground font-body text-[12px] mt-2">
-            + £{monthlyCost}/month (12-month minimum)
-          </p>
+          {isNewBusiness ? (
+            <p className="text-muted-foreground font-body text-[12px] mt-2">
+              Then £{discountedMonthly}/month for 12 months · 10% off applied
+            </p>
+          ) : (
+            <p className="text-muted-foreground font-body text-[12px] mt-2">
+              £{baseMonthly}/month · 12-month minimum
+            </p>
+          )}
+          {rushFee > 0 && (
+            <p className="text-accent/80 font-body text-[11px] mt-1">+ £{rushFee} one-off rush fee</p>
+          )}
         </motion.div>
 
         {/* Steps */}
