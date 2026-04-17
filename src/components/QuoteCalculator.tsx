@@ -11,10 +11,17 @@ const steps: Step[] = [
   {
     question: "What type of website do you need?",
     options: [
-      { label: "Trades Website", price: 500 },
-      { label: "E-Commerce Store", price: 500 },
-      { label: "Business Website", price: 500 },
-      { label: "Portfolio", price: 500 },
+      { label: "Trades Website", price: 0 },
+      { label: "E-Commerce Store", price: 0 },
+      { label: "Business Website", price: 0 },
+      { label: "Portfolio", price: 0 },
+    ],
+  },
+  {
+    question: "Do you have a website already?",
+    options: [
+      { label: "No, this is my first website", price: 0 },
+      { label: "Yes, I want a redesign", price: 0 },
     ],
   },
   {
@@ -29,7 +36,7 @@ const steps: Step[] = [
     options: [
       { label: "No rush (2–4 weeks)", price: 0 },
       { label: "Standard (1–2 weeks)", price: 0 },
-      { label: "Rush (3–5 days)", price: 50 },
+      { label: "Rush (3–5 days) — £50 one-off", price: 50 },
     ],
   },
 ];
