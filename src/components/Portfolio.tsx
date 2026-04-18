@@ -74,16 +74,23 @@ const Portfolio = () => (
                 <span className="inline-block px-3 py-1.5 bg-accent/10 border border-accent/20 text-accent text-[11px] font-body tracking-wider uppercase">
                   {project.result}
                 </span>
-                {project.url && (
+                {project.url && (project.url.startsWith("http") ? (
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:text-accent/70 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-accent hover:text-accent/70 transition-colors text-[11px] font-body tracking-wider uppercase"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    Visit <ExternalLink className="w-3.5 h-3.5" />
                   </a>
-                )}
+                ) : (
+                  <Link
+                    to={project.url}
+                    className="inline-flex items-center gap-1.5 text-accent hover:text-accent/70 transition-colors text-[11px] font-body tracking-wider uppercase"
+                  >
+                    View Demo <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                ))}
               </div>
             </div>
           </motion.div>
