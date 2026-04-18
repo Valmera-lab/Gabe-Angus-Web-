@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import portfolioValmera from "@/assets/portfolio-valmera.jpg";
 import portfolioPlumbing from "@/assets/portfolio-plumbing.jpg";
 import portfolioElectrical from "@/assets/portfolio-electrical.jpg";
@@ -18,7 +19,7 @@ const projects = [
     type: "Trade Business Website",
     description: "Lead-generating website with online booking and service pages.",
     image: portfolioPlumbing,
-    url: null,
+    url: "/portfolio/cooper-plumbing",
     result: "2x enquiries in 4 weeks",
   },
   {
@@ -26,7 +27,7 @@ const projects = [
     type: "Service Business Website",
     description: "Professional site with service booking and customer testimonials.",
     image: portfolioElectrical,
-    url: null,
+    url: "/portfolio/spark-electrical",
     result: "Online bookings up 180%",
   },
 ];
@@ -73,16 +74,23 @@ const Portfolio = () => (
                 <span className="inline-block px-3 py-1.5 bg-accent/10 border border-accent/20 text-accent text-[11px] font-body tracking-wider uppercase">
                   {project.result}
                 </span>
-                {project.url && (
+                {project.url && (project.url.startsWith("http") ? (
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:text-accent/70 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-accent hover:text-accent/70 transition-colors text-[11px] font-body tracking-wider uppercase"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    Visit <ExternalLink className="w-3.5 h-3.5" />
                   </a>
-                )}
+                ) : (
+                  <Link
+                    to={project.url}
+                    className="inline-flex items-center gap-1.5 text-accent hover:text-accent/70 transition-colors text-[11px] font-body tracking-wider uppercase"
+                  >
+                    View Demo <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                ))}
               </div>
             </div>
           </motion.div>
