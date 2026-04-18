@@ -18,7 +18,7 @@ const projects = [
     type: "Trade Business Website",
     description: "Lead-generating website with online booking and service pages.",
     image: portfolioPlumbing,
-    url: null,
+    url: "/portfolio/cooper-plumbing",
     result: "2x enquiries in 4 weeks",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     type: "Service Business Website",
     description: "Professional site with service booking and customer testimonials.",
     image: portfolioElectrical,
-    url: null,
+    url: "/portfolio/spark-electrical",
     result: "Online bookings up 180%",
   },
 ];
