@@ -57,7 +57,8 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-10"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-background"
+            style={{ backgroundColor: "hsl(var(--background))" }}
           >
             {navLinks.map((link, i) => (
               <motion.a

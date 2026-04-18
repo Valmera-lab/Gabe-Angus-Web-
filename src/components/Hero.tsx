@@ -35,8 +35,8 @@ const Hero = () => {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body font-light leading-relaxed"
           >
             We build modern, mobile-friendly websites for tradespeople and small businesses 
-            — designed to turn visitors into paying customers. Starting from{" "}
-            <span className="text-accent font-medium">£500</span>.
+            — designed to turn visitors into paying customers. From{" "}
+            <span className="text-accent font-medium">£199/mo</span> — first month just <span className="text-accent font-medium">£20</span>.
           </motion.p>
 
           <motion.div
