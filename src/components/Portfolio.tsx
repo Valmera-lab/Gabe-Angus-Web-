@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import portfolioValmera from "@/assets/portfolio-valmera.jpg";
 import portfolioPlumbing from "@/assets/portfolio-plumbing.jpg";
 import portfolioElectrical from "@/assets/portfolio-electrical.jpg";
